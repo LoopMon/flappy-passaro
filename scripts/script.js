@@ -6,19 +6,19 @@ const ctx = cnv.getContext("2d");
 const media = new Audio();
 media.src = "./audios/midia.mp3";
 const perdeu = new Audio();
-perdeu.src = "./audios/Comunista.ogg";
+perdeu.src = "./audios/risos.ogg";
 
 /* IMAGENS */
 const cenario = new Image();
-cenario.src = "./imagens/TelaCenario.png";
+cenario.src = "./imagens/clouds.png";
 const cloud = new Cloud(cenario);
 
 const skin = new Image();
-skin.src = "./imagens/MyBird1.png";
+skin.src = "./imagens/blue-bird.png";
 const bird = new Bird(skin);
 
 const tela = new Image();
-tela.src = "./imagens/TelaInicio.png";
+tela.src = "./imagens/header.png";
 
 /* OBJETOS */
 const cano1 = new Cano(cnv.width, 100);
@@ -31,4 +31,4 @@ const estadoJogo = {
 };
 
 /* INICIAR PROGRAMA */
-loop();
+window.requestAnimationFrame(loop);

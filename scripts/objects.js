@@ -52,7 +52,7 @@ function Bird(img) {
     }
     /* TELA DE PERDEU */
     if (this.estado == estadoJogo.perdeu) {
-      tela.src = "./imagens/TelaPerdeu.png";
+      tela.src = "./imagens/game-over.png";
       ctx.drawImage(
         tela,
         0,
@@ -126,7 +126,7 @@ function Bird(img) {
   };
 
   this.reset = () => {
-    tela.src = "./imagens/TelaInicio.png";
+    tela.src = "./imagens/header.png";
     this.estado = estadoJogo.inicio;
     this.score = 0;
     this.x = 30;

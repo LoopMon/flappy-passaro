@@ -8,11 +8,11 @@ document.addEventListener("keydown", (e) => {
     reset();
   }
   if (e.key == "c" || e.key == "C") {
-    skin.src = "./imagens/MyBird2.png";
+    skin.src = "./imagens/red-bird.png";
     bird.cor = skin;
   }
   if (e.key == "v" || e.key == "V") {
-    skin.src = "./imagens/MyBird1.png";
+    skin.src = "./imagens/blue-bird.png";
     bird.cor = skin;
   }
 });
