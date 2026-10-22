@@ -1,76 +1,104 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.container {
+    width: 100%;
     height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+}
+
+.game {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
     display: flex;
-    justify-content: center;
 }
 
-.container{
+#cnv {
+    display: block;
+
     width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    height: 100%;
 
-.container .titulo{
-    width: 100%;
-    max-width: 80%;
-}
-
-.container .titulo h2{
-    font-size: 1.8rem;
-    font-family:Verdana, Tahoma, sans-serif;
-    background-color: blueviolet;
-    border-radius: 20px 20px 0 0;
-    color: #ff0;
-    padding: 5px;
-    text-align: center;
-}
-
-#cnv{
-    width: 100%;
-    max-width: 80%;
     background-color: aquamarine;
-    border-radius: 0 0 10px 10px;
-    /* border: 1px solid #000; */
-    image-rendering: smooth;
 }
 
-#jump, #reset {
-    text-align: center;
-    line-height: 50px;
-    user-select: none;
-    margin-top: 10px;
-    padding: 15px;
+.controles {
+    display: none;
+}
+
+.controles button {
+    width: 200px;
+    min-height: 50px;
+
+    padding: 0 20px;
+
     border: none;
     border-radius: 10px;
-    font-size: 24px;
-    color: #fff;
-    font-weight: 500;
-    width: 200px;
-    height: 50px;
+
     background-color: royalblue;
+    color: white;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
     cursor: pointer;
+    user-select: none;
 }
 
-@media(min-width: 600px){
-    .container .titulo {
-        max-width: 700px;
-    }
-    #cnv {
-        max-width: 700px;
-    }
+.controles button:active {
+    transform: scale(0.96);
 }
 
-@media(max-width: 600px) {
-    .container {
-        justify-content: start;
+/* Celulares e telas menores */
+
+@media (max-width: 600px) {
+    .game {
+        position: fixed;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .controles {
+        position: absolute;
+        inset: auto 0 24px;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 12px;
+
+        padding: 0 16px;
+
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .controles button {
+        width: auto;
+        min-width: 110px;
+        min-height: 48px;
+
+        font-size: 1rem;
+
+        pointer-events: auto;
     }
 }
